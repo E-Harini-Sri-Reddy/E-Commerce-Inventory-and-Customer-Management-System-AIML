@@ -1,5 +1,19 @@
 # 📦 E-Commerce Inventory and Customer Management System (AIML Integrated)
 
+---
+
+## 👥 Team Members
+
+| Roll Number | Name                     |
+| ----------- | ------------------------ |
+| 2410030019  | Eadunur Harini Sri Reddy |
+| 2410030113  | Jampa Pranav Teja        |
+| 2410030288  | Chittepu Pallavi Reddy   |
+| 2410030289  | Krishnasri               |
+| 2410030385  | Bhavya Sri               |
+
+---
+
 ## 🔍 Overview
 
 This project aims to design and implement a **smart E-Commerce Inventory and Customer Management System** that leverages **Artificial Intelligence and Machine Learning (AIML)** to enhance operational efficiency, customer engagement, and business intelligence.
@@ -28,18 +42,6 @@ Our system combines traditional inventory and customer management with predictiv
 
 - Suggests relevant products to users based on their behavior and order history.
 - Techniques: Collaborative Filtering, Content-Based Filtering
-
----
-
-## 👥 Team Members
-
-| Roll Number | Name                     |
-| ----------- | ------------------------ |
-| 2410030019  | Eadunur Harini Sri Reddy |
-| 2410030113  | Jampa Pranav Teja        |
-| 2410030288  | Chittepu Pallavi Reddy   |
-| 2410030289  | Krishnasri               |
-| 2410030385  | Bhavya Sri               |
 
 ---
 
