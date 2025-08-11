@@ -47,12 +47,9 @@ Our system combines traditional inventory and customer management with predictiv
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript (optional)
-- **Backend**: Python (Flask/Django)
-- **Database**: MySQL / MongoDB
 - **ML Libraries**: scikit-learn, pandas, NumPy, TensorFlow / Keras
-- **Visualization**: Matplotlib, Seaborn
-- **Tools**: Jupyter Notebook, VS Code, GitHub
+- **Visualization**: Matplotlib
+- **Tools**: VS Code, GitHub
 
 ---
 
