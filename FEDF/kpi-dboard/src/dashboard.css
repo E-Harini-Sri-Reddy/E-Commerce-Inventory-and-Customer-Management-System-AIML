@@ -1,0 +1,341 @@
+/*
+ * Base styles and typography
+ */
+:root {
+  --color-bg-primary: #111827;
+  --color-bg-secondary: #1f2937;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-border: #374151;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-red-500: #ef4444;
+  --color-red-400: #f87171;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-yellow-300: #fcd34d;
+  --color-yellow-800: #92400e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/*
+ * Layouts
+ */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.page-content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .page-content {
+    padding: 1.5rem;
+  }
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/*
+ * Header
+ */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-secondary);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+}
+
+@media (min-width: 640px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 24rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border-radius: 9999px;
+  background-color: #374151;
+  color: var(--color-text-primary);
+  border: none;
+  transition: all 0.2s;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-input:focus {
+  outline: 2px solid var(--color-blue-600);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+}
+
+.status-text {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.profile-button,
+.export-button {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: var(--color-blue-600);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.profile-button:hover,
+.export-button:hover {
+  background-color: var(--color-blue-700);
+}
+
+/*
+ * Sidebar
+ */
+.sidebar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    background-color: var(--color-bg-secondary);
+    padding: 1rem;
+    border-right: 1px solid var(--color-border);
+  }
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  background-color: var(--color-blue-600);
+  color: var(--color-text-primary);
+}
+
+.nav-item:not(.active) {
+  color: var(--color-text-muted);
+}
+
+.nav-item:not(.active):hover {
+  background-color: #374151;
+  color: var(--color-text-primary);
+}
+
+.nav-item-text {
+  font-weight: 500;
+}
+
+/*
+ * Dashboard Components
+ */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .metric-grid {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .metric-grid {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+}
+
+.metric-card {
+  position: relative;
+  background-color: var(--color-bg-secondary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.5s ease-in-out;
+}
+
+.metric-card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.metric-card-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  color: var(--color-text-primary);
+  transition: all 0.5s ease-in-out;
+}
+
+.metric-card-value.is-negative {
+  color: var(--color-red-500);
+}
+
+.chart-container {
+  background-color: var(--color-bg-secondary);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+/*
+ * Inventory Table
+ */
+.inventory-table {
+  width: 100%;
+  table-layout: auto;
+  color: var(--color-text-secondary);
+}
+
+.inventory-table thead tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+.inventory-table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s;
+}
+
+.inventory-table tbody tr:hover {
+  background-color: #374151;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.status-badge.low {
+  background-color: var(--color-yellow-800);
+  color: var(--color-yellow-300);
+}
+
+.status-badge.out-of-stock {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.status-badge.in-stock {
+  background-color: #15803d;
+  color: #86efac;
+}
