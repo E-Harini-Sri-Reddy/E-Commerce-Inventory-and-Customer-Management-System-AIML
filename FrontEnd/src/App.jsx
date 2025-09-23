@@ -105,6 +105,9 @@ const ReportsIcon = () => (
 const SettingsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucude-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.39a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 1 1.73v.5a2 2 0 0 1-1 1.73l-.15.08a2 2 0 0 0-.73 2.73l.22.39a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.73v-.5a2 2 0 0 1 1-1.73l.15-.08a2 2 0 0 0 .73-2.73l-.22-.39a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
 );
+const TrackerIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+);
 const SearchIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search text-gray-400"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
 );
@@ -325,6 +328,14 @@ const Settings = () => {
   );
 };
 
+const Tracker = () => {
+  return (
+    <div className="flex justify-center items-center h-[600px]">
+      <h1 className="text-4xl font-bold"> Tracker Page To Be Added </h1>
+    </div>
+  )
+}
+
 const Dashboard = () => {
   const salesData = [
     { name: 'Electronics', sales: 45000 },
@@ -471,6 +482,7 @@ export default function App() {
     { name: 'Inventory', icon: <InventoryIcon />, key: 'inventory' },
     { name: 'Reports', icon: <ReportsIcon />, key: 'reports' },
     { name: 'Settings', icon: <SettingsIcon />, key: 'settings' },
+    { name: 'Tracker', icon: <TrackerIcon />, key: 'tracker' },
   ];
 
   const MetricCard = ({ title, value, unit, tooltipText, isNegative }) => (
@@ -487,7 +499,6 @@ export default function App() {
     </div>
   );
 
-
   const LineChart = ({ title, data, color, yUnit }) => {
     const [period, setPeriod] = useState(7);
 
@@ -499,7 +510,6 @@ export default function App() {
         .slice(data.length - period)
         .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-      // Ensure filtered data is not empty
       return sortedData.length > 0 ? sortedData : [];
     }, [data, period]);
 
@@ -514,7 +524,7 @@ export default function App() {
 
     const width = 600;
     const height = 200;
-    const margin = { top: 20, right: 40, bottom: 30, left: 50 }; // Increased right margin
+    const margin = { top: 20, right: 40, bottom: 30, left: 50 };
     const chartWidth = width - margin.left - margin.right;
     const chartHeight = height - margin.top - margin.bottom;
 
@@ -523,30 +533,44 @@ export default function App() {
     const minVal = Math.min(...values);
 
     const range = maxVal - minVal;
-
-    // Add padding for Y-axis to avoid cramped chart
     const paddingY = range === 0 ? maxVal * 0.1 : range * 0.1;
     const adjustedMin = minVal - paddingY;
     const adjustedMax = maxVal + paddingY;
 
     // Symmetric left+right padding for X axis
-    const xPadding = 20; // Left padding stays same, right padding is increased
+    const xPadding = 20;
 
+    // Scales
     const xScale = (index) => {
-      if (filteredData.length <= 1) return 0; // Prevent out-of-bound rendering
+      if (filteredData.length <= 1) return 0;
       return (
         xPadding + (index / (filteredData.length - 1)) * (chartWidth - 2 * xPadding)
       );
     };
-
+    
     const yScale = (value) =>
       chartHeight - ((value - adjustedMin) / (adjustedMax - adjustedMin)) * chartHeight;
 
-    const linePath = filteredData
-      .map((d, i) => `${i === 0 ? 'M' : 'L'} ${xScale(i)},${yScale(d.value)}`)
-      .join(' ');
+    // Memoized line path
+    const linePath = useMemo(() => {
+      return filteredData
+        .map((d, i) => `${i === 0 ? 'M' : 'L'} ${xScale(i)},${yScale(d.value)}`)
+        .join(' ');
+    }, [filteredData, xScale, yScale]);
 
     const lastDataPoint = filteredData[filteredData.length - 1];
+
+    // Y-axis Labels (min and max)
+    const yLabels = [
+      { value: adjustedMin, text: `${minVal}${yUnit}` },
+      { value: adjustedMax, text: `${maxVal}${yUnit}` }
+    ];
+
+    // X-axis Labels (First and Last Dates)
+    const xLabels = [
+      { position: xPadding, date: filteredData[0]?.date },
+      { position: chartWidth - xPadding, date: filteredData[filteredData.length - 1]?.date }
+    ];
 
     return (
       <div className="bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -557,11 +581,7 @@ export default function App() {
               <button
                 key={p}
                 onClick={() => setPeriod(p)}
-                className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                  period === p
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-700 text-gray-400 hover:bg-gray-600'
-                }`}
+                className={`px-3 py-1 text-sm rounded-full transition-colors ${period === p ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-400 hover:bg-gray-600'}`}
               >
                 {p} Days
               </button>
@@ -572,22 +592,8 @@ export default function App() {
         <svg width={width} height={height}>
           <g transform={`translate(${margin.left},${margin.top})`}>
             {/* Y-axis grid lines (aligned with xPadding) */}
-            <line
-              x1={xPadding}
-              y1={yScale(adjustedMin)}
-              x2={chartWidth - xPadding}
-              y2={yScale(adjustedMin)}
-              stroke="#4b5563"
-              strokeDasharray="4 2"
-            />
-            <line
-              x1={xPadding}
-              y1={yScale(adjustedMax)}
-              x2={chartWidth - xPadding}
-              y2={yScale(adjustedMax)}
-              stroke="#4b5563"
-              strokeDasharray="4 2"
-            />
+            <line x1={xPadding} y1={yScale(adjustedMin)} x2={chartWidth - xPadding} y2={yScale(adjustedMin)} stroke="#4b5563" strokeDasharray="4 2" />
+            <line x1={xPadding} y1={yScale(adjustedMax)} x2={chartWidth - xPadding} y2={yScale(adjustedMax)} stroke="#4b5563" strokeDasharray="4 2" />
 
             {/* Line path */}
             <path d={linePath} fill="none" stroke={color} strokeWidth="2" />
@@ -603,50 +609,42 @@ export default function App() {
             )}
 
             {/* X-axis labels */}
-            <text x={xPadding} y={chartHeight + 20} fill="#9ca3af" textAnchor="start" fontSize="12">
-              {filteredData[0]?.date}
-            </text>
-            <text
-              x={chartWidth - xPadding}
-              y={chartHeight + 20}
-              fill="#9ca3af"
-              textAnchor="end"
-              fontSize="12"
-            >
-              {filteredData[filteredData.length - 1]?.date}
-            </text>
+            {xLabels.map((label, i) => (
+              <text
+                key={i}
+                x={label.position}
+                y={chartHeight + 20}
+                fill="#9ca3af"
+                textAnchor={i === 0 ? 'start' : 'end'}
+                fontSize="12"
+              >
+                {label.date}
+              </text>
+            ))}
 
             {/* Y-axis labels */}
-            <text
-              x={xPadding - 10}
-              y={yScale(adjustedMin)}
-              fill="#9ca3af"
-              textAnchor="end"
-              alignmentBaseline="middle"
-              fontSize="12"
-            >
-              {minVal}
-              {yUnit}
-            </text>
-            <text
-              x={xPadding - 10}
-              y={yScale(adjustedMax)}
-              fill="#9ca3af"
-              textAnchor="end"
-              alignmentBaseline="middle"
-              fontSize="12"
-            >
-              {maxVal}
-              {yUnit}
-            </text>
+            {yLabels.map((label, i) => (
+              <text
+                key={i}
+                x={xPadding - 10}
+                y={yScale(label.value)}
+                fill="#9ca3af"
+                textAnchor="end"
+                alignmentBaseline="middle"
+                fontSize="12"
+              >
+                {label.text}
+              </text>
+            ))}
           </g>
         </svg>
       </div>
     );
   };
+
   
   // Bar Chart Component (New)
-  const BarChart = ({ title, data, xKey, yKey, color }) => {
+  const BarChart = ({ title, data, xKey, yKey, color }) => {
     if (!data || data.length === 0) {
       return (
         <div className="bg-gray-800 p-6 rounded-xl shadow-lg flex items-center justify-center h-64">
@@ -662,46 +660,50 @@ export default function App() {
     const chartHeight = height - margin.top - margin.bottom;
 
     const maxVal = Math.max(...data.map(d => d[yKey]));
-
-    // Dynamically shrink bar width
     const barWidth = Math.min((chartWidth / data.length) * 0.7, 60); // cap max width to avoid overflow
 
+    // Scales
     const xScale = (index) =>
       index * (chartWidth / data.length) + (chartWidth / data.length - barWidth) / 2;
-    const yScale = (value) =>
-      chartHeight - (value / maxVal) * chartHeight;
+    const yScale = (value) => chartHeight - (value / maxVal) * chartHeight;
 
     return (
       <div className="bg-gray-800 p-6 rounded-xl shadow-lg overflow-hidden">
         <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet">
           <g transform={`translate(${margin.left}, ${margin.top})`}>
-            {/* Bars */}
-            {data.map((d, i) => (
-              <rect
-                key={d[xKey]}
-                x={xScale(i)}
-                y={yScale(d[yKey])}
-                width={barWidth}
-                height={chartHeight - yScale(d[yKey])}
-                fill={color}
-                className="transition-all duration-500 ease-in-out"
-                rx="4"
-              />
-            ))}
-            {/* X-axis labels */}
-            {data.map((d, i) => (
-              <text
-                key={`x-${i}`}
-                x={xScale(i) + barWidth / 2}
-                y={chartHeight + 20}
-                fill="#9ca3af"
-                textAnchor="middle"
-                fontSize="12"
-              >
-                {d[xKey]}
-              </text>
-            ))}
+            {/* Bars and X-axis labels */}
+            {data.map((d, i) => {
+              const xPosition = xScale(i);
+              const yPosition = yScale(d[yKey]);
+              const barHeight = chartHeight - yPosition;
+
+              return (
+                <React.Fragment key={d[xKey]}>
+                  {/* Bar */}
+                  <rect
+                    x={xPosition}
+                    y={yPosition}
+                    width={barWidth}
+                    height={barHeight}
+                    fill={color}
+                    className="transition-all duration-500 ease-in-out"
+                    rx="4"
+                  />
+                  {/* X-axis Label */}
+                  <text
+                    x={xPosition + barWidth / 2}
+                    y={chartHeight + 20}
+                    fill="#9ca3af"
+                    textAnchor="middle"
+                    fontSize="12"
+                  >
+                    {d[xKey]}
+                  </text>
+                </React.Fragment>
+              );
+            })}
+
             {/* Y-axis label (max only for now) */}
             <text
               x="-10"
@@ -719,7 +721,6 @@ export default function App() {
       </div>
     );
   };
-
   
   // Pie Chart Component (New)
   const PieChart = ({ title, data, valueKey, labelKey }) => {
@@ -1365,7 +1366,7 @@ export default function App() {
         </div>
         <div className="flex items-center space-x-4">
           <span className="text-sm text-gray-400 hidden md:block">
-            Status: Connected to Mock MySQL Database
+            Status: Connected to Mock Database
           </span>
           <button className="px-4 py-2 rounded-full bg-blue-600 text-sm font-semibold hover:bg-blue-700 transition-colors" onClick={() => setActivePage('Profile')}>
             Profile
@@ -1454,11 +1455,11 @@ export default function App() {
                 />
                 <div className="lg:col-span-2">
                   <LineChart
-                    title="Inventory Turnover History"
-                    data={salesData.inventoryTurnover}
-                    color="#f59e0b"
-                    yUnit="x"
-                  />
+                    title="Inventory Turnover History"
+                    data={mockSalesAnalyticsData.inventoryTurnover}  // This is an array, not a number
+                    color="#f59e0b"
+                    yUnit="x"
+                  />
                 </div>
               </div>
             </div>
@@ -1468,9 +1469,8 @@ export default function App() {
           {activePage === 'inventory' && <InventoryPage />}
           {activePage === 'reports' && <ReportsPage />}
           {activePage === 'Profile' && <Profile />}
-
-          {/* The Settings page is not fully implemented in the provided App.jsx but a placeholder is here */}
           {activePage === 'settings' && <Settings />}
+          {activePage === 'tracker' && <Tracker />}
         </main>
       </div>
     </div>
