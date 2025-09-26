@@ -97,7 +97,7 @@ const AnalyticsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-bar-chart"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
 );
 const InventoryIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-package"><path d="m7.5 4.275 9 5.175"/><path d="M2.5 8.75l9 5.175 9-5.175"/><path d="M12 2v20"/><path d="m16.5 15.725-9-5.175"/><path d="M7.5 4.275v9.5"/><path d="M16.5 15.725v-9.5"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 8L12 3 3 8l9 5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 18l9 5 9-5"/></svg>
 );
 const ReportsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L15 2z"/><path d="M15 2v5.5a.5.5 0 0 0 .5.5H20"/><path d="M8 12h8"/><path d="M8 16h8"/><path d="M10 20h4"/></svg>
@@ -106,8 +106,56 @@ const SettingsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucude-settings"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.39a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 1 1.73v.5a2 2 0 0 1-1 1.73l-.15.08a2 2 0 0 0-.73 2.73l.22.39a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.73v-.5a2 2 0 0 1 1-1.73l.15-.08a2 2 0 0 0 .73-2.73l-.22-.39a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
 );
 const TrackerIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="12"/><polygon points="17.5 15 22 15 22 10 17.5 5 17.5 15"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="17.5" cy="18.5" r="2.5"/></svg>
 );
+const AIIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="16" y="16" width="32" height="32" rx="4" ry="4" stroke="currentColor" fill="none"/>
+    
+    {/* AI text */}
+    <text x="24" y="38" fontSize="16" fontFamily="Arial, sans-serif" fill="currentColor">AI</text>
+
+    {/* Top lines */}
+    <line x1="32" y1="4" x2="32" y2="16"/>
+    <circle cx="32" cy="4" r="2"/>
+
+    <line x1="24" y1="4" x2="24" y2="16"/>
+    <circle cx="24" cy="4" r="2"/>
+
+    <line x1="40" y1="4" x2="40" y2="16"/>
+    <circle cx="40" cy="4" r="2"/>
+
+    {/* Bottom lines */}
+    <line x1="32" y1="48" x2="32" y2="60"/>
+    <circle cx="32" cy="60" r="2"/>
+
+    <line x1="24" y1="48" x2="24" y2="60"/>
+    <circle cx="24" cy="60" r="2"/>
+
+    <line x1="40" y1="48" x2="40" y2="60"/>
+    <circle cx="40" cy="60" r="2"/>
+
+    {/* Left lines */}
+    <line x1="4" y1="32" x2="16" y2="32"/>
+    <circle cx="4" cy="32" r="2"/>
+
+    <line x1="4" y1="24" x2="16" y2="24"/>
+    <circle cx="4" cy="24" r="2"/>
+
+    <line x1="4" y1="40" x2="16" y2="40"/>
+    <circle cx="4" cy="40" r="2"/>
+
+    {/* Right lines */}
+    <line x1="48" y1="32" x2="60" y2="32"/>
+    <circle cx="60" cy="32" r="2"/>
+
+    <line x1="48" y1="24" x2="60" y2="24"/>
+    <circle cx="60" cy="24" r="2"/>
+
+    <line x1="48" y1="40" x2="60" y2="40"/>
+    <circle cx="60" cy="40" r="2"/>
+  </svg>
+)
 const SearchIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search text-gray-400"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
 );
@@ -117,42 +165,55 @@ const AlertIcon = () => (
 
 const Profile = () => {
   return (
-    <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
-      <h2 className="text-2xl font-bold text-gray-900 mb-2">Profile Information</h2>
-      <p className="text-gray-600 text-sm mb-4">View and manage your personal profile information.</p>
-      <div className="space-y-6">
-        <div className="flex items-center space-x-4">
-          <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 text-xl font-semibold">
-            JD
+    <div className="bg-slate-900 text-white min-h-screen px-2 sm:px-4 lg:px-4">
+      <div className="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-lg overflow-y-auto">
+        <h2 className="text-2xl font-bold text-slate-100 mb-2">Profile Information</h2>
+        <p className="text-slate-400 text-sm mb-4">View and manage your personal profile information.</p>
+        <div className="space-y-6">
+          <div className="flex items-center space-x-4">
+            <div className="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center text-gray-700 text-xl font-semibold">
+              JD
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-100">John Doe</h3>
+              <p className="text-sm text-slate-400">johndoe@example.com</p>
+              <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
+                Admin
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Change Password Form */}
+        <form className="space-y-4 mt-6">
+          <h4 className="text-md font-semibold text-slate-100">Change Password</h4>
+          <div>
+            <label className="block text-sm font-medium text-slate-200">New Password</label>
+            <input
+              type="password"
+              className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-700 text-white shadow-sm focus:border-blue-400 focus:ring-blue-400"
+            />
           </div>
           <div>
-            <h3 className="text-lg font-bold">John Doe</h3>
-            <p className="text-sm text-gray-500">johndoe@example.com</p>
-            <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800">
-              Admin
-            </span>
+            <label className="block text-sm font-medium text-slate-200">Confirm New Password</label>
+            <input
+              type="password"
+              className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-700 text-white shadow-sm focus:border-blue-400 focus:ring-blue-400"
+            />
           </div>
-        </div>
+          <button
+            type="submit"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+          >
+            Change Password
+          </button>
+        </form>
       </div>
-      {/* Change Password Form */}
-      <form className="space-y-4 mt-6">
-        <h4 className="text-md font-semibold text-gray-800">Change Password</h4>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">New Password</label>
-          <input type="password" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Confirm New Password</label>
-          <input type="password" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
-        </div>
-        <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          Change Password
-        </button>
-      </form>
     </div>
   );
 };
 
+// Settings
 const Settings = () => {
   const [storeName, setStoreName] = useState('My Awesome Store');
   const [storeAddress, setStoreAddress] = useState('123 Main St, Anytown, USA');
@@ -161,7 +222,7 @@ const Settings = () => {
   const [lowStockAlerts, setLowStockAlerts] = useState(false);
   const [kpiAlerts, setKpiAlerts] = useState(true);
   const [refreshInterval, setRefreshInterval] = useState('60');
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [layoutView, setLayoutView] = useState('grid');
   const [showAlert, setShowAlert] = useState(false);
 
@@ -170,6 +231,9 @@ const Settings = () => {
     setTimeout(() => setShowAlert(false), 3000);
   };
 
+  const inputClass =
+    "mt-1 block w-full rounded-md border border-slate-600 bg-slate-700 text-white shadow-sm focus:border-blue-400 focus:ring-blue-400";
+
   const sections = [
     {
       title: 'Store Configuration',
@@ -177,30 +241,30 @@ const Settings = () => {
       content: (
         <form className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Store Name</label>
+            <label className="block text-sm font-medium text-slate-200">Store Name</label>
             <input
               type="text"
               value={storeName}
               onChange={(e) => setStoreName(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black"
+              className={inputClass}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Address</label>
+            <label className="block text-sm font-medium text-slate-200">Address</label>
             <input
               type="text"
               value={storeAddress}
               onChange={(e) => setStoreAddress(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black"
+              className={inputClass}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Operating Hours</label>
+            <label className="block text-sm font-medium text-slate-200">Operating Hours</label>
             <input
               type="text"
               value={operatingHours}
               onChange={(e) => setOperatingHours(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black"
+              className={inputClass}
             />
           </div>
         </form>
@@ -211,33 +275,21 @@ const Settings = () => {
       description: 'Configure the alerts and notifications you receive.',
       content: (
         <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">Sales Alerts</span>
-            <input
-              type="checkbox"
-              checked={salesAlerts}
-              onChange={(e) => setSalesAlerts(e.target.checked)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-            />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">Low Stock Alerts</span>
-            <input
-              type="checkbox"
-              checked={lowStockAlerts}
-              onChange={(e) => setLowStockAlerts(e.target.checked)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-            />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">KPI Alerts</span>
-            <input
-              type="checkbox"
-              checked={kpiAlerts}
-              onChange={(e) => setKpiAlerts(e.target.checked)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-            />
-          </div>
+          {[
+            { label: 'Sales Alerts', value: salesAlerts, setValue: setSalesAlerts },
+            { label: 'Low Stock Alerts', value: lowStockAlerts, setValue: setLowStockAlerts },
+            { label: 'KPI Alerts', value: kpiAlerts, setValue: setKpiAlerts },
+          ].map(({ label, value, setValue }, idx) => (
+            <div key={idx} className="flex items-center justify-between">
+              <span className="text-sm font-medium text-slate-200">{label}</span>
+              <input
+                type="checkbox"
+                checked={value}
+                onChange={(e) => setValue(e.target.checked)}
+                className="h-4 w-4 text-blue-400 border-slate-600 bg-slate-700 rounded focus:ring-blue-400"
+              />
+            </div>
+          ))}
         </div>
       ),
     },
@@ -247,7 +299,7 @@ const Settings = () => {
       content: (
         <div className="space-y-4">
           <div>
-            <label htmlFor="refreshInterval" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="refreshInterval" className="block text-sm font-medium text-slate-200">
               Dashboard Refresh Interval (seconds)
             </label>
             <input
@@ -255,27 +307,27 @@ const Settings = () => {
               type="number"
               value={refreshInterval}
               onChange={(e) => setRefreshInterval(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black"
+              className={inputClass}
             />
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">Dark Mode</span>
+            <span className="text-sm font-medium text-slate-200">Dark Mode</span>
             <input
               type="checkbox"
               checked={isDarkMode}
               onChange={(e) => setIsDarkMode(e.target.checked)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+              className="h-4 w-4 text-blue-400 border-slate-600 bg-slate-700 rounded focus:ring-blue-400"
             />
           </div>
           <div>
-            <label htmlFor="layoutView" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="layoutView" className="block text-sm font-medium text-slate-200">
               Default Layout View
             </label>
             <select
               id="layoutView"
               value={layoutView}
               onChange={(e) => setLayoutView(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-black"
+              className={inputClass}
             >
               <option value="grid">Grid View</option>
               <option value="list">List View</option>
@@ -287,28 +339,25 @@ const Settings = () => {
   ];
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between">
+    <div className="bg-slate-900 text-white min-h-screen p-4 sm:p-6 lg:p-8">
       <div className="space-y-8 pb-12">
         {sections.map((section, index) => (
           <div
             key={index}
-            className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200"
+            className="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-lg"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">{section.title}</h2>
-            <p className="text-gray-600 text-sm mb-4">{section.description}</p>
+            <h2 className="text-2xl font-bold text-slate-100 mb-2">{section.title}</h2>
+            <p className="text-slate-400 text-sm mb-4">{section.description}</p>
             {section.content}
           </div>
         ))}
       </div>
 
       {/* Save Changes Button */}
-      <div className="flex justify-center pb-6 shadow-inner">
+      <div className="flex justify-center pb-6">
         <button
-          onClick={() => {
-            setShowAlert(true);
-            setTimeout(() => setShowAlert(false), 3000);
-          }}
-          className="px-6 py-2 bg-indigo-600 text-white font-bold rounded-md shadow-lg hover:bg-indigo-700 transition duration-300"
+          onClick={handleSaveChanges}
+          className="px-6 py-2 bg-blue-500 text-white font-bold rounded-md shadow-lg hover:bg-blue-600 transition duration-300"
         >
           Save Changes
         </button>
@@ -317,8 +366,8 @@ const Settings = () => {
       {/* Alert rendered with React Portal */}
       {showAlert &&
         ReactDOM.createPortal(
-          <div className="fixed top-0 left-0 right-0 bottom-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
-            <div className="bg-green-500 text-white py-4 px-6 rounded-lg shadow-lg text-lg font-semibold">
+          <div className="fixed top-0 left-0 right-0 bottom-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-blue-600 text-white py-4 px-6 rounded-lg shadow-lg text-lg font-semibold">
               Settings Saved!
             </div>
           </div>,
@@ -328,13 +377,240 @@ const Settings = () => {
   );
 };
 
+const inboundOutbound = {
+  inbound: [
+    { id: 1, product: 'Laptop Pro', qty: 50, status: 'In Transit', eta: '2025-08-05' },
+    { id: 2, product: 'Ergo Chair', qty: 20, status: 'Delivered', eta: '2025-07-29' },
+    { id: 3, product: 'Mechanical Keyboard', qty: 75, status: 'In Transit', eta: '2025-08-07' },
+    { id: 4, product: '4K Monitor', qty: 30, status: 'In Transit', eta: '2025-08-10' },
+    { id: 5, product: 'Wireless Mouse', qty: 150, status: 'Delivered', eta: '2025-08-01' },
+    { id: 6, product: 'USB-C Hub', qty: 100, status: 'In Transit', eta: '2025-08-08' },
+    { id: 7, product: 'LED Desk Lamp', qty: 40, status: 'Delivered', eta: '2025-08-02' },
+    { id: 8, product: 'Webcam', qty: 60, status: 'In Transit', eta: '2025-08-12' },
+    { id: 9, product: 'Portable SSD', qty: 25, status: 'Delivered', eta: '2025-07-31' },
+    { id: 10, product: 'Gaming Headset', qty: 35, status: 'In Transit', eta: '2025-08-09' },
+    { id: 11, product: 'Power Bank', qty: 90, status: 'Delivered', eta: '2025-08-03' },
+    { id: 12, product: 'Smart Speaker', qty: 20, status: 'In Transit', eta: '2025-08-15' },
+  ],
+  outbound: [
+    { id: 1, product: 'Organic Coffee', qty: 10, status: 'Shipped', customer: 'Alice' },
+    { id: 2, product: 'Noise Cancelling Headphones', qty: 2, status: 'Processing', customer: 'Bob' },
+    { id: 3, product: 'Laptop Pro', qty: 1, status: 'Shipped', customer: 'Charlie' },
+    { id: 4, product: 'Ergo Chair', qty: 1, status: 'Delivered', customer: 'Diana' },
+    { id: 5, product: 'Mechanical Keyboard', qty: 3, status: 'Shipped', customer: 'Eve' },
+    { id: 6, product: 'Wireless Mouse', qty: 5, status: 'Shipped', customer: 'Grace' },
+    { id: 7, product: 'USB-C Hub', qty: 2, status: 'Delivered', customer: 'Heidi' },
+    { id: 8, product: 'LED Desk Lamp', qty: 1, status: 'Shipped', customer: 'Ivan' },
+    { id: 9, product: 'Webcam', qty: 1, status: 'Processing', customer: 'Judy' },
+    { id: 10, product: 'Gaming Headset', qty: 1, status: 'Delivered', customer: 'Liam' },
+  ],
+};
+
 const Tracker = () => {
   return (
-    <div className="flex justify-center items-center h-[600px]">
-      <h1 className="text-4xl font-bold"> Tracker Page To Be Added </h1>
-    </div>
+    <section className="space-y-6">
+      <h1 className="text-3xl font-bold text-white">Inbound/Outbound Tracker</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h2 className="text-xl font-semibold text-white mb-4">Inbound Shipments</h2>
+          <ul className="space-y-3">
+            {inboundOutbound.inbound.map((shipment) => (
+              <li key={shipment.id} className="p-3 bg-gray-700 rounded-lg flex justify-between items-center text-white">
+                <div>
+                  <p className="font-medium text-white">{shipment.product} (<span className="text-pink-400">{shipment.qty} units</span>)</p>
+                  <p className="text-sm text-gray-400">Status: <span className="font-semibold">{shipment.status}</span></p>
+                </div>
+                <p className="text-sm text-gray-400">ETA: {shipment.eta}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-gray-800 p-6 rounded-xl shadow-lg">
+          <h2 className="text-xl font-semibold text-white mb-4">Outbound Shipments</h2>
+          <ul className="space-y-3">
+            {inboundOutbound.outbound.map((shipment) => (
+              <li key={shipment.id} className="p-3 bg-gray-700 rounded-lg flex justify-between items-center text-white">
+                <div>
+                  <p className="font-medium text-white">{shipment.product} (<span className="text-pink-400">{shipment.qty} units</span>)</p>
+                  <p className="text-sm text-gray-400">Status: <span className="font-semibold">{shipment.status}</span></p>
+                </div>
+                <p className="text-sm text-gray-400">Customer: {shipment.customer}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   )
 }
+
+const AI_Suggestions = ({
+  mockInventoryData,
+  mockSalesAnalyticsData,
+}) => {
+  const [activeSuggestion, setActiveSuggestion] = useState(null);
+
+  // Helpers
+  const lowStockProducts = mockInventoryData.products.filter(
+    (p) => p.quantity <= mockInventoryData.lowStockThreshold
+  );
+
+  const slowMovingItems = mockInventoryData.slowMovingItems;
+  const expiredItems = mockInventoryData.expiredItems;
+  const salesByCategory = mockSalesAnalyticsData.salesByCategory;
+
+  // Find the top trending category
+  const topCategory = salesByCategory.length
+    ? salesByCategory.reduce((max, curr) => (curr.sales > max.sales ? curr : max))
+    : null;
+
+  const suggestions = [
+    {
+      key: 'reorder',
+      title: 'Suggested Re-order Quantity',
+      summary: `${lowStockProducts.length} item${lowStockProducts.length !== 1 ? 's' : ''} low in stock`,
+      details: (
+        <>
+          {lowStockProducts.length === 0 ? (
+            <p className="text-gray-300">All products have sufficient stock.</p>
+          ) : (
+            <ul className="list-disc list-inside text-gray-300 space-y-1 max-h-48 overflow-auto">
+              {lowStockProducts.map((item) => (
+                <li key={item.id}>
+                  <span className="font-semibold">{item.name}</span> (SKU: {item.sku}) — Qty: {item.quantity}, Status: {item.reorderStatus}
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
+      ),
+      bgColor: 'bg-blue-700',
+    },
+    {
+      key: 'futureDemand',
+      title: 'Future Demand Predictions',
+      summary: topCategory
+        ? `Growth expected in "${topCategory.category}"`
+        : 'No trend data available',
+      details: (
+        <>
+          <p className="text-gray-300 mb-2">
+            Based on recent sales trends, here are your top categories with predicted growth:
+          </p>
+          <ul className="list-disc list-inside text-gray-300 space-y-1 max-h-48 overflow-auto">
+            {salesByCategory.map(({ category, sales }) => (
+              <li key={category}>
+                <span className="font-semibold">{category}</span>: approximately {sales.toLocaleString()} sales
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-300 mt-2 italic">
+            Consider increasing stock in categories with steady or increasing sales.
+          </p>
+        </>
+      ),
+      bgColor: 'bg-green-700',
+    },
+    {
+      key: 'slowMovers',
+      title: 'Slow Movers & Action Plans',
+      summary: `${slowMovingItems.length} slow mover${slowMovingItems.length !== 1 ? 's' : ''}, ${expiredItems.length} expired`,
+      details: (
+        <>
+          {slowMovingItems.length === 0 ? (
+            <p className="text-gray-300">No slow-moving items detected.</p>
+          ) : (
+            <>
+              <ul className="list-disc list-inside text-gray-300 space-y-1 max-h-48 overflow-auto">
+                {slowMovingItems.map(({ id, name, sku, sales, lastSold }) => (
+                  <li key={id}>
+                    <span className="font-semibold">{name}</span> (SKU: {sku}) — Sales: {sales}, Last Sold: {lastSold}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gray-300 mt-2 italic">
+                Consider promotions or bundles to improve sales on these items.
+              </p>
+            </>
+          )}
+          {expiredItems.length > 0 && (
+            <>
+              <p className="text-gray-300 mt-4 font-semibold">Expired or Near Expiry Items:</p>
+              <ul className="list-disc list-inside text-gray-300 space-y-1 max-h-32 overflow-auto">
+                {expiredItems.map(({ id, name, sku, expiryDate }) => (
+                  <li key={id}>
+                    <span className="font-semibold">{name}</span> (SKU: {sku}) — Expiry: {expiryDate}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gray-300 mt-2 italic">
+                Consider clearance or removal to avoid waste.
+              </p>
+            </>
+          )}
+        </>
+      ),
+      bgColor: 'bg-red-700',
+    },
+    {
+      key: 'summary',
+      title: 'Overall AI Inventory Summary',
+      summary: `${lowStockProducts.length} low stock, ${topCategory?.category || 'N/A'} trending, ${slowMovingItems.length} slow, ${expiredItems.length} expired`,
+      details: (
+        <>
+          <p className="text-gray-300 mb-2">
+            • <strong>{lowStockProducts.length}</strong> product{lowStockProducts.length !== 1 ? 's' : ''} need reordering.
+          </p>
+          {topCategory && (
+            <p className="text-gray-300 mb-2">
+              • <strong>{topCategory.category}</strong> is the top trending category with {topCategory.sales.toLocaleString()} sales.
+            </p>
+          )}
+          <p className="text-gray-300 mb-2">
+            • <strong>{slowMovingItems.length}</strong> slow-moving item{slowMovingItems.length !== 1 ? 's' : ''} identified.
+          </p>
+          <p className="text-gray-300 mb-2">
+            • <strong>{expiredItems.length}</strong> expired or near-expiry item{expiredItems.length !== 1 ? 's' : ''}.
+          </p>
+          <p className="text-gray-300 mt-4 italic">
+            This summary aggregates insights from all AI suggestions to give a quick overview of your inventory priorities.
+          </p>
+        </>
+      ),
+      bgColor: 'bg-gray-700',
+    },
+  ];
+
+  return (
+    <>
+      <h2 className="text-3xl font-bold text-white mb-6 ml-0 text-left">AI Suggestions</h2>
+      <div className="bg-gray-900 pt-4 pl-0 pr-0 pb-6 rounded-xl shadow-lg max-w-full ml-0">
+        <div className="bg-gray-800 p-8 rounded-xl ml-0 max-w-full">
+          <p className="text-gray-300 mb-6 text-left">Click to view content:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mb-6">
+            {suggestions.map(({ key, title, summary, bgColor }) => (
+              <button
+                key={key}
+                onClick={() => setActiveSuggestion(key === activeSuggestion ? null : key)}
+                className={`p-6 rounded-xl ${bgColor} text-left transition-all duration-200 hover:scale-[1.02] ${activeSuggestion === key ? 'border-2 border-white' : ''}`}
+              >
+                <h3 className="text-lg font-semibold text-white">{title}</h3>
+                <p className="text-gray-300 mt-1">{summary}</p>
+              </button>
+            ))}
+          </div>
+
+          {activeSuggestion && (
+            <div className="bg-gray-800 p-6 rounded-lg max-h-96 overflow-auto border border-blue-500 mt-6">
+              {suggestions.find((s) => s.key === activeSuggestion)?.details}
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
+
 
 const Dashboard = () => {
   const salesData = [
@@ -481,8 +757,9 @@ export default function App() {
     { name: 'Sales Analytics', icon: <AnalyticsIcon />, key: 'sales' },
     { name: 'Inventory', icon: <InventoryIcon />, key: 'inventory' },
     { name: 'Reports', icon: <ReportsIcon />, key: 'reports' },
-    { name: 'Settings', icon: <SettingsIcon />, key: 'settings' },
     { name: 'Tracker', icon: <TrackerIcon />, key: 'tracker' },
+    { name: 'AI Suggestions', icon: <AIIcon />, key: 'ai' },
+    { name: 'Settings', icon: <SettingsIcon />, key: 'settings' },
   ];
 
   const MetricCard = ({ title, value, unit, tooltipText, isNegative }) => (
@@ -907,12 +1184,15 @@ export default function App() {
     }));
 
     // AI Restocking Recommendations
-    const restockingRecommendations = useMemo(() => {
-      const lowStock = inventoryData.products.filter(p => p.quantity < inventoryData.lowStockThreshold);
-      // Mock logic: recommend based on sales from mock data
-      const salesMap = new Map(salesData.topProducts.map(p => [p.name, p.sales]));
-      return lowStock.sort((a, b) => (salesMap.get(b.name) || 0) - (salesMap.get(a.name) || 0));
-    }, [inventoryData, salesData]);
+    const restockingRecommendations = useMemo(() => {
+      const lowStock = inventoryData.products.filter(p => p.quantity < inventoryData.lowStockThreshold);
+      const expiredItems = inventoryData.expiredItems;
+      // Combine low stock and expired items
+      const combinedRecommendations = [...lowStock, ...expiredItems];
+      // Mock logic: recommend based on sales from mock data
+      const salesMap = new Map(salesData.topProducts.map(p => [p.name, p.sales]));
+      return combinedRecommendations.sort((a, b) => (salesMap.get(b.name) || 0) - (salesMap.get(a.name) || 0));
+    }, [inventoryData, salesData]);
 
     // Mock Inventory Movement Data
     const mockMovementData = [
@@ -1022,7 +1302,9 @@ export default function App() {
                   <div className="flex items-center space-x-2">
                     <span className="font-medium text-white">{product.name}</span>
                   </div>
-                  <span className="text-sm text-gray-400">Current stock: {product.quantity}</span>
+                  <span className="text-sm text-gray-400">
+                    {product.quantity !== undefined ? `Current stock: ${product.quantity}` : "Expired"}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -1469,8 +1751,11 @@ export default function App() {
           {activePage === 'inventory' && <InventoryPage />}
           {activePage === 'reports' && <ReportsPage />}
           {activePage === 'Profile' && <Profile />}
+          {activePage === 'tracker' && <Tracker />}
+          {activePage === 'ai' && <AI_Suggestions mockInventoryData={mockInventoryData}
+          mockSalesAnalyticsData={mockSalesAnalyticsData}
+          mockDashboardMetrics={mockDashboardMetrics} />}
           {activePage === 'settings' && <Settings />}
-          {activePage === 'tracker' && <Tracker />}
         </main>
       </div>
     </div>
